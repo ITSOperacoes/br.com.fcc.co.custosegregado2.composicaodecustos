@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/test/Opa5"],function(t){"use strict";return t.extend("br.com.fcc.co.custosegregado2.composicaodecustos.test.integration.arrangements.Startup",{iStartMyApp:function(t){var o=t||{};o.delay=o.delay||50;this.iStartMyUIComponent({componentConfig:{name:"br.com.fcc.co.custosegregado2.composicaodecustos",async:true},hash:o.hash,autoWait:o.autoWait})}})});

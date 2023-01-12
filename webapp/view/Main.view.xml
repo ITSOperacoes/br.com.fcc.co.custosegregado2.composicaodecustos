@@ -1,0 +1,58 @@
+<mvc:View
+    controllerName="br.com.fcc.co.custosegregado2.composicaodecustos.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page class="sapUiResponsivePadding" id="page" title="{i18n>title}">
+					<Panel>
+
+						<VBox>
+
+							<f:SimpleForm
+								layout="ResponsiveGridLayout"
+								adjustLabelSpan="false"
+								singleContainerFullSize="false"
+								editable="false">
+								
+								<f:content>
+
+									<Label text="{i18n>periodo}" labelFor="periodo"/>
+									<DatePicker
+										id="periodo"
+										placeholder="Selecione.."
+										displayFormat="MM-yyyy"/>
+									<Label text="{i18n>material}" labelFor="materialInput"/>	
+									<Input
+										id="materialInput"
+										placeholder="Material">
+									</Input>
+									<Label text="{i18n>createdAtLabel}" labelFor="DateText"/>
+									<Text id="DateText" text="{
+													path: '/Timestamp',
+													type: 'sap.ui.model.type.DateTime',
+													formatOptions: {
+														pattern: 'dd/MM/yyyy'
+													}
+												}" />
+									
+									<Label text="{i18n>createdByLabel}" labelFor="UserText"/>
+									<Text id="UserText" text="{/Username} - {/Name}" />
+									
+									<Label text="" labelFor="submitBtn" />
+									<Button id="submitBtn" icon="sap-icon://create" press="composicaoDeCustos" text="{i18n>executar}"/>
+								
+								</f:content>
+									
+							</f:SimpleForm>
+						</VBox>
+					</Panel>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

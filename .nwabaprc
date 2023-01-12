@@ -1,0 +1,10 @@
+{
+    "base": "./dist",
+    "conn_server": "https://fccs4dev01.fcc.com.br:44300/",
+    "conn_user": "ITSS_CARAUJO",
+    "conn_password": "senha487cC@2",
+    "abap_package": "Z001",
+    "abap_bsp": "ZCO_APUR_CUSTO2",
+    "abap_bsp_text": "Apuração dos custos segregados",
+    "abap_transport": "DE1K916377"
+}

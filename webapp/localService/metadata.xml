@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZCO_CUSTO_SEGREGADO_BI_SRV" xml:lang="pt" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="zctprocessbi" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Zbukrsi"/>
+                    <PropertyRef Name="Zbukrsf"/>
+                    <PropertyRef Name="Zbranchi"/>
+                    <PropertyRef Name="Zbranchf"/>
+                    <PropertyRef Name="Zanoi"/>
+                    <PropertyRef Name="Zanof"/>
+                    <PropertyRef Name="Zpoperi"/>
+                    <PropertyRef Name="Zpoperf"/>
+                </Key>
+                <Property Name="Zbukrsi" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Empresa" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zbukrsf" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Empresa" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zbranchi" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Loc.negócios" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zbranchf" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Loc.negócios" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zanoi" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Exercício" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zanof" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Exercício" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zpoperi" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Período contáb." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zpoperf" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Período contáb." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Timestamp" Type="Edm.DateTime" Nullable="false" Precision="0" sap:unicode="false" sap:label="Registro hora" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ernam" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Criado por" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZCO_CUSTO_SEGREGADO_BI_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="zctprocessbiCollection" EntityType="ZCO_CUSTO_SEGREGADO_BI_SRV.zctprocessbi" sap:content-version="1"/>
+                <FunctionImport Name="eliminaVersoes" ReturnType="ZCO_CUSTO_SEGREGADO_BI_SRV.zctprocessbi" EntitySet="zctprocessbiCollection" m:HttpMethod="GET">
+                    <Parameter Name="periodo" Type="Edm.DateTime" Mode="In" Precision="0"/>
+                </FunctionImport>
+                <FunctionImport Name="ultimoProcessamento" ReturnType="ZCO_CUSTO_SEGREGADO_BI_SRV.zctprocessbi" EntitySet="zctprocessbiCollection" m:HttpMethod="GET"/>
+                <FunctionImport Name="composicaoDeCustos" ReturnType="ZCO_CUSTO_SEGREGADO_BI_SRV.zctprocessbi" EntitySet="zctprocessbiCollection" m:HttpMethod="POST">
+                    <Parameter Name="poper" Type="Edm.String" Mode="In" MaxLength="3"/>
+                    <Parameter Name="bdatj" Type="Edm.String" Mode="In" MaxLength="4"/>
+                </FunctionImport>
+            </EntityContainer>
+            <atom:link rel="self" href="https://fccs4dev01.fcc.com.br:44300/sap/opu/odata/sap/ZCO_CUSTO_SEGREGADO_BI_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://fccs4dev01.fcc.com.br:44300/sap/opu/odata/sap/ZCO_CUSTO_SEGREGADO_BI_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

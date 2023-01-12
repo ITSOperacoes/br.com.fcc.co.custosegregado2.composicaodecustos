@@ -1,0 +1,1 @@
+sap.ui.define(["brcom.fcc.co.custosegregado2./composicaodecustos/controller/Main.controller"],function(o){"use strict";QUnit.module("Main Controller");QUnit.test("I should test the Main controller",function(t){var n=new o;n.onInit();t.ok(n)})});
